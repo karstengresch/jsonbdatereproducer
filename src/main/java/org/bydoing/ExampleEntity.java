@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.*;
 import java.time.Duration;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class ExampleEntity extends PanacheEntityBase {
 //	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
 //	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	@Column(name = "exampledate")
-	public OffsetDateTime exampledate;
+	public LocalDateTime exampledate;
 
 	public static Uni<ExampleEntity> createExampleEntity(ExampleEntity exampleEntity) {
 
