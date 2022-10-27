@@ -2,6 +2,12 @@
 
 For reproducing a problem with Quarkus, Reactive Hibernate, Panache, Reactive SQL Client with JSON-B (de)serialization.
 
+## NB - The working solution can be found in the branch "solution", https://github.com/karstengresch/jsonbdatereproducer/tree/solution
+Basically: don't use `@JsonbDateFormat`or `@JsonbDateFormat`at all. 
+
+Just make sure you use the correct format in the POST request, e.g. `2022-01-10T12:15:50-04:00`.
+
+
 ## Problem Description
 
 1. Created Project via https://code.quarkus.io/
