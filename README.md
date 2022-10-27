@@ -153,8 +153,6 @@ Caused by: java.time.format.DateTimeParseException: Text '2022-03-10T12:15:50-04
         at io.smallr
 ```
 
-8. Checkout the nolombok branch if you wish to confirm that the problem exists w/o Lombok dependency and annotations.
-
 ## Expected Behavior
 The POST method should be executed, a new record should have been inserted into the DB and the method should HTTP 200.
 
