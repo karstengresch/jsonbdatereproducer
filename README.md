@@ -1,6 +1,8 @@
-# jsonblocaldatereproducer Project
+# jsonbdatereproducer Project
 
-For reproducing a problem with Quarkus, Reactive Hibernate, Panache, Reactive SQL Client
+For reproducing a problem with Quarkus, Reactive Hibernate, Panache, Reactive SQL Client with JSON-B (de)serialization.
+
+## Problem Description
 
 1. Created Project via https://code.quarkus.io/
 
@@ -150,5 +152,8 @@ Caused by: java.time.format.DateTimeParseException: Text '2022-03-10T12:15:50-04
         at io.smallrye.mutiny.operators.uni.UniOnFailureTransform$UniOnFailureTransformProcessor.onFailure(UniOnFailureTransform.java:64)
         at io.smallr
 ```
+
+## Expected Behavior
+The POST method should be executed, a new record should have been inserted into the DB and the method should HTTP 200.
 
 
