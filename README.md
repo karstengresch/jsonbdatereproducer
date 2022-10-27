@@ -1,6 +1,6 @@
 # jsonbdatereproducer Project
 
-## This is the working solution, thanks to https://github.com/quarkusio/quarkus/issues/28877 !**
+## This is the working solution, thanks to https://github.com/quarkusio/quarkus/issues/28877 !
 Use it if you want to see how it is done (basically: no JSON-B annotations for formatting).
 
 
