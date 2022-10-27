@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.*;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -38,7 +37,7 @@ public class ExampleEntity extends PanacheEntityBase {
 
 	public static Uni<ExampleEntity> createExampleEntity(ExampleEntity exampleEntity) {
 
-		Log.debug("******* ******* ExampleEntity.createExampleEntity entered w/ consenting: " + exampleEntity.toString());
+		Log.debug("******* ******* ExampleEntity.createExampleEntity entered w/ exampleEntity: " + exampleEntity.toString());
 		return Panache
 			.<ExampleEntity>withTransaction(exampleEntity::persist)
 			.replaceWith(exampleEntity)
