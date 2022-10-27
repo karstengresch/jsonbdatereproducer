@@ -34,7 +34,7 @@ public class ExampleEntity extends PanacheEntityBase {
 //	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
 //	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	@Column(name = "exampledate")
-	public OffsetDateTime exampledate;
+	public LocalDateTime exampledate;
 
 	public static Uni<ExampleEntity> createExampleEntity(ExampleEntity exampleEntity) {
 
