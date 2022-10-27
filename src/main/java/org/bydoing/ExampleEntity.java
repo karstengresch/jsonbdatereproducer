@@ -27,11 +27,6 @@ public class ExampleEntity extends PanacheEntityBase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long id;
 
-//  	@JsonbDateFormat(value="yyyy-MM-dd'T'HH:mm:ss")
-//	@JsonFormat(shape = JsonFormat.Shape.STRING,
-//		pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+1")
-//	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
-//	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	@Column(name = "exampledate")
 	public OffsetDateTime exampledate;
 
@@ -57,7 +52,5 @@ public class ExampleEntity extends PanacheEntityBase {
 			.onFailure()
 			.recoverWithUni(Uni.createFrom().<List<PanacheEntityBase>>item(Collections.EMPTY_LIST));
 	}
-
-
 
 }

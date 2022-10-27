@@ -1,13 +1,9 @@
 package org.bydoing;
 
 import io.quarkus.logging.Log;
-import io.quarkus.runtime.StartupEvent;
 import io.smallrye.mutiny.Uni;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -21,30 +17,6 @@ import java.util.List;
 @ApplicationScoped
 public class ExampleResource {
 
-    @Inject
-    io.vertx.mutiny.pgclient.PgPool pgPoolForClient;
-
-    @Inject
-    @ConfigProperty(name = "exampledb.schema.create", defaultValue = "true")
-    boolean createDbSchema;
-
-
-    void config(@Observes StartupEvent startupEvent) {
-        System.out.println("********** Startup Event!");
-        if (createDbSchema) {
-            initdb();
-        }
-    }
-
-    private void initdb() {
-//        pgPoolForClient.query("DROP TABLE IF EXISTS exampletable").execute()
-//          .flatMap(r -> pgPoolForClient.query("CREATE TABLE exampletable (id SERIAL PRIMARY KEY, exampledate TIMESTAMP WITH TIME ZONE NOT NULL)").execute())
-//          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-08-24T14:00+3:00')").execute())
-//          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-09-25T15:00+3:00')").execute())
-//          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-10-26T16:00+3:00')").execute())
-//          .await().indefinitely();
-    }
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -52,6 +24,20 @@ public class ExampleResource {
         return ExampleEntity.getAllExampleEntities();
     }
 
+    /**
+     *
+     * Valid Call:
+     * <pre>
+     * curl -X 'POST' \
+     *   'http://localhost:8080/example' \
+     *   -H 'accept: application/json' \
+     *   -H 'Content-Type: application/json' \
+     *   -d '{
+     *   "id": 0,
+     *   "exampledate": "2022-03-10T12:15:50-04:00"
+     * }'
+     * </pre>
+     * */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
