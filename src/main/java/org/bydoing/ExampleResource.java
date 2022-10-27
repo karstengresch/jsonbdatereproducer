@@ -38,9 +38,9 @@ public class ExampleResource {
     private void initdb() {
         pgPoolForClient.query("DROP TABLE IF EXISTS exampletable").execute()
           .flatMap(r -> pgPoolForClient.query("CREATE TABLE exampletable (id SERIAL PRIMARY KEY, exampledate TIMESTAMP WITH TIME ZONE NOT NULL)").execute())
-          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2022-08-24T14:00')").execute())
-          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2022-09-25T15:00')").execute())
-          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2022-10-26T16:00')").execute())
+          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-08-24T14:00')").execute())
+          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-09-25T15:00')").execute())
+          .flatMap(r -> pgPoolForClient.query("INSERT INTO exampletable (exampledate) VALUES ('2023-10-26T16:00')").execute())
           .await().indefinitely();
     }
 
