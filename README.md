@@ -1,6 +1,6 @@
 # jsonbdatereproducer Project
 
->>> **This is the working solution, thanks to https://github.com/quarkusio/quarkus/issues/28877 !** <<<
+**This is the working solution, thanks to https://github.com/quarkusio/quarkus/issues/28877 !**
 
 For reproducing a problem with Quarkus, Reactive Hibernate, Panache, Reactive SQL Client with JSON-B (de)serialization.
 
