@@ -131,4 +131,24 @@ Caused by: java.time.format.DateTimeParseException: Text '2022-03-10T12:15:50-04
         ... 28 more
 ```
 
-7. Checkout the 
+7. Checkout the localdatetime branch and run (5, optional, and) 6. again and you'll get this error
+
+```
+2022-10-27 12:03:26,491 ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (vert.x-eventloop-thread-3) HTTP Request to /example failed, error id: b6e2928a-f9de-40bc-9180-0920df35f1e0-1: java.lang.IllegalStateException: io.vertx.core.impl.NoStackTraceThrowable: Parameter at position[0] with class = [java.time.LocalDateTime] and value = [2022-03-10T12:15:50] can not be coerced to the expected class = [java.time.OffsetDateTime] for encoding.
+        at org.bydoing.ExampleEntity.lambda$createExampleEntity$0(ExampleEntity.java:49)
+        at io.smallrye.context.impl.wrappers.SlowContextualFunction.apply(SlowContextualFunction.java:21)
+        at io.smallrye.mutiny.operators.uni.UniOnFailureTransform$UniOnFailureTransformProcessor.onFailure(UniOnFailureTransform.java:54)
+        at io.smallrye.mutiny.operators.uni.UniFailOnTimeout$UniFailOnTimeoutProcessor.onFailure(UniFailOnTimeout.java:80)
+        at io.smallrye.mutiny.operators.uni.UniOperatorProcessor.onFailure(UniOperatorProcessor.java:54)
+        at io.smallrye.mutiny.operators.uni.UniOperatorProcessor.onFailure(UniOperatorProcessor.java:54)
+        at io.smallrye.mutiny.operators.uni.UniOnItemOrFailureConsume$UniOnItemOrFailureConsumeProcessor.onFailure(UniOnItemOrFailureConsume.java:46)
+        at io.smallrye.mutiny.operators.uni.UniOperatorProcessor.onFailure(UniOperatorProcessor.java:54)
+        at io.smallrye.mutiny.operators.uni.UniOperatorProcessor.onFailure(UniOperatorProcessor.java:54)
+        at io.smallrye.mutiny.operators.uni.UniOperatorProcessor.onFailure(UniOperatorProcessor.java:54)
+        at io.smallrye.mutiny.operators.uni.UniOnCancellationCall$UniOnCancellationCallProcessor.onFailure(UniOnCancellationCall.java:59)
+        at io.smallrye.mutiny.operators.uni.UniOnFailureFlatMap$UniOnFailureFlatMapProcessor.onFailure(UniOnFailureFlatMap.java:62)
+        at io.smallrye.mutiny.operators.uni.UniOnFailureTransform$UniOnFailureTransformProcessor.onFailure(UniOnFailureTransform.java:64)
+        at io.smallr
+```
+
+
